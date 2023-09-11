@@ -1,0 +1,58 @@
+[
+  {
+    "objectID": "core.html",
+    "href": "core.html",
+    "title": "core",
+    "section": "",
+    "text": "import datetime\nimport hashlib\nimport json\nimport os\nimport re\nimport sys\nimport warnings\n\nimport matplotlib as mpl\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport pandas as pd\nfrom matplotlib.ticker import FuncFormatter\nfrom pandas.plotting import register_matplotlib_converters\nfrom scipy.stats import norm\n\nregister_matplotlib_converters()\nimport seaborn as sns\nfrom IPython.display import Markdown, display\n\nsns.set()\nsns.set_context(\"poster\", font_scale=1.3)\nplt.rcParams[\"figure.figsize\"] = 10, 6\npd.options.display.max_columns = None\npd.options.display.max_rows = None\npd.options.display.precision = 4\nwarnings.simplefilter(action=\"ignore\", category=FutureWarning)"
+  },
+  {
+    "objectID": "core.html#subcategory-percent-time-spent-per-category",
+    "href": "core.html#subcategory-percent-time-spent-per-category",
+    "title": "core",
+    "section": "Subcategory percent time spent per category",
+    "text": "Subcategory percent time spent per category\n\ncategory = all_countries.groupby(['Category'])['hoursPerDayCombined'].sum().idxmax()\nplotser = all_countries[all_countries['Category'] == category].groupby(['Subcategory'])['hoursPerDayCombined'].sum()\nfig, ax = plt.subplots(figsize=(12, 8))\nfig.patch.set_facecolor('w')\n(100 * plotser.sort_values() / plotser.sum()).plot.barh(ax=ax)\nax.set_title(category)\nax.set_xlabel(\"Percentage of Time\")\nfig.tight_layout()"
+  },
+  {
+    "objectID": "core.html#category-percent-time-spent-per-day",
+    "href": "core.html#category-percent-time-spent-per-day",
+    "title": "core",
+    "section": "Category percent time spent per day",
+    "text": "Category percent time spent per day\n\ncat_per_day = all_countries.groupby(['Category'])['hoursPerDayCombined'].sum()\nfig, ax = plt.subplots(figsize=(12, 8))\nfig.patch.set_facecolor('w')\n(24 * cat_per_day.sort_values()/ cat_per_day.sum()).plot.barh(ax=ax)\nax.set_xlabel(\"Hours per day\")\nfig.tight_layout()\n\n\n\n\n\ncat_per_day / cat_per_day.sum()\n\nCategory\nDeliberate neural restructuring    0.0551\nExperience oriented                0.2826\nFood provision                     0.0642\nMaintenance of surroundings        0.0370\nNonfood provision                  0.0047\nOrganization                       0.0928\nSomatic maintenance                0.4373\nTechnosphere modification          0.0264\nName: hoursPerDayCombined, dtype: float64"
+  },
+  {
+    "objectID": "core.html#example-notebook-usage",
+    "href": "core.html#example-notebook-usage",
+    "title": "core",
+    "section": "Example notebook usage",
+    "text": "Example notebook usage\n\n# #| export\n# def say_hello(to):\n#     \"Say hello to somebody\"\n#     return f'Hello {to}!'"
+  },
+  {
+    "objectID": "core.html#misc",
+    "href": "core.html#misc",
+    "title": "core",
+    "section": "Misc",
+    "text": "Misc"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "20230912tidytuesday",
+    "section": "",
+    "text": "This file will become your README and also the index of your documentation."
+  },
+  {
+    "objectID": "index.html#install",
+    "href": "index.html#install",
+    "title": "20230912tidytuesday",
+    "section": "Install",
+    "text": "Install\npip install 20230912tidytuesday"
+  },
+  {
+    "objectID": "index.html#how-to-use",
+    "href": "index.html#how-to-use",
+    "title": "20230912tidytuesday",
+    "section": "How to use",
+    "text": "How to use\nFill me in please! Don’t forget code examples:\n\n1+1\n\n2"
+  }
+]
