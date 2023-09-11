@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "20230912tidytuesday"
+  site-url: "https://jbwhit.github.io/20230912tidytuesday"
+  description: "The Human Chronome Project data exploration."
+  repo-branch: main
+  repo-url: "https://github.com/jbwhit/20230912tidytuesday"
